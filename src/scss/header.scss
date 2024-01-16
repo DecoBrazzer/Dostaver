@@ -1,0 +1,110 @@
+@import 'color';
+
+
+.main-header {
+    box-sizing: content-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    
+    &__item > *{
+        
+        display: flex;
+        align-items: center;
+        height: 122px;
+      
+        
+    }
+
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 40px;
+    max-width: 1400px;
+    width: 100%;
+}
+
+.navigation {
+    font-family: 'GolosText';
+    font-size: 15px;
+    color: $white;
+   
+
+    &__list {
+        gap: 50px;
+        font-size: 20px;
+    }
+
+    &__item {
+    }
+}
+.logo {
+    background-color: $white;
+    border-radius: 0 0 43px 43px;
+    min-width: 150px;
+    max-width: 220px;
+    width: 100%;
+    justify-content: center;
+    gap: 12px;
+    &__item {
+        font-size: 16px;
+        font-family: RussoOne;
+        color: $darkPurple;
+    }
+}
+.logo-icon {
+    width: 35.999px;
+    height: 36px;
+    flex-shrink: 0;
+}
+
+.contacts {
+    gap: 26px;
+    &__info, a{
+        color: $white;
+        font-family: 'GolosText';
+        font-size: 24px;
+    }
+
+    &__messenger {
+        display: flex;
+        gap: 6px;
+    }
+}
+.information {
+
+    &__item {
+        text-wrap: nowrap;
+    }
+}
+
+.mesenger {
+
+    &__item {
+        width: 60px;
+        height: 40px;
+        border-radius: 20px;
+        text-align: center;
+        
+
+        img {
+            vertical-align: sub ;
+        }
+
+    }
+
+
+    
+
+    
+}
+.telegram {
+    
+    background-color: $telegram;
+}
+.whatsapp {
+    
+    background-color: $whatapp;
+}
