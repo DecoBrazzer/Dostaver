@@ -1,110 +1,143 @@
 @import 'color';
+@import 'mediaconst';
 
+// Main container
+.container {
+    display: flex;
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+}
 
+// Main content-block header
 .main-header {
-    box-sizing: content-box;
+    // Items content-block header
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    height: 125px;
     
     
-    &__item > *{
-        
+
+    &__item, &__item > .navigation__list {
         display: flex;
-        align-items: center;
-        height: 122px;
-      
+        
         
     }
-
 }
 
-.container {
-    margin: 0 auto;
-    padding: 0 40px;
-    max-width: 1400px;
-    width: 100%;
-}
 
+// Navigation block
 .navigation {
-    font-family: 'GolosText';
-    font-size: 15px;
-    color: $white;
-   
-
-    &__list {
-        gap: 50px;
-        font-size: 20px;
-    }
-
-    &__item {
-    }
-}
-.logo {
-    background-color: $white;
-    border-radius: 0 0 43px 43px;
-    min-width: 150px;
-    max-width: 220px;
-    width: 100%;
-    justify-content: center;
-    gap: 12px;
-    &__item {
-        font-size: 16px;
-        font-family: RussoOne;
-        color: $darkPurple;
-    }
-}
-.logo-icon {
-    width: 35.999px;
-    height: 36px;
+    flex-grow: 0.4;
     flex-shrink: 0;
-}
-
-.contacts {
-    gap: 26px;
-    &__info, a{
-        color: $white;
+    // Navigation list
+    &__list {
         font-family: 'GolosText';
-        font-size: 24px;
+        color: $white;
+        font-size: 15px;
+        font-weight: 500;
+        gap: 30px; 
     }
-
-    &__messenger {
-        display: flex;
-        gap: 6px;
+    // Item navigation list
+    &__item:not(:last-child){
     }
 }
-.information {
 
+// Block logo
+.logo {
+    
+    // Item block logo
+    padding: 0 41px;
+    margin: 0 40px;
+    background-color: $white;
+    height: 100%;
+    align-items: center;
+    border-radius: 0 0 43px 43px;
+    gap: 10px;
     &__item {
-        text-wrap: nowrap;
+
+        .logo__popup {
+            display: none;
+        }
+    }
+
+    &__icon {
+        min-width: 35px;
+    }
+
+    &__link {
+        font-family: "RussoOne";
+        font-weight: 400;
+        font-size: 16px ;
+    }
+    
+}
+
+
+
+// main block contacts
+.contacts {
+    gap: 20px;
+    align-items: center;
+    // Item block contacts
+    &__item {
+        flex-wrap: nowrap;  
     }
 }
 
-.mesenger {
-
+.main-info  {
+    
+    &__item, a {
+        color: $white;
+        font-size: 18px;
+        font-family: 'GolosText';
+        white-space: nowrap;
+    }
+}
+.messenger {
+    display: flex;
+    gap: 10px; 
     &__item {
         width: 60px;
         height: 40px;
-        border-radius: 20px;
         text-align: center;
-        
-
-        img {
-            vertical-align: sub ;
-        }
-
+        padding: 7px;
+        border-radius: 20px;
     }
-
-
-    
-
-    
 }
+
 .telegram {
-    
-    background-color: $telegram;
+    background-color: $whatapp;
 }
 .whatsapp {
+    background-color: $telegram;
+}
+
+
+
+// media ---> header
+@media (max-width:$tablet) and (max-width:$phone) {
+    .contacts {
+        display: none;
+    }
+    .navigation {
+        display: none;
+    }
     
-    background-color: $whatapp;
+    .logo {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        width: 310px;
+        &__item {
+            .logo__popup {
+                display: block;
+                margin-left: 60px;
+            }
+        }
+    }
+
+    
 }
